@@ -1,0 +1,37 @@
+     <hr>
+        <footer>
+        <p>© Company 2012</p>
+      </footer>
+     </div> <!-- /container -->
+
+        <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?php echo JAVASCRIPT; ?>jquery.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-transition.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-alert.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-modal.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-dropdown.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-scrollspy.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-tab.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-tooltip.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-popover.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-button.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-collapse.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-carousel.js"></script>
+    <script src="<?php echo JAVASCRIPT; ?>bootstrap-typeahead.js"></script> 
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('#button-search').load(function(){
+                    $(this).hide(); 
+                    $('#search-checkboxes').css({display : 'inline-block'});
+                });
+                
+                $('#button-search').click(function(){
+                    $('#search').slideToggle('fast');
+                });
+            });
+        </script>
+
+  </body>
+</html>
