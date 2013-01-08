@@ -13,8 +13,8 @@ define("USER",                  "root");        #username database
 define("PASSWORD",              "root");    #password database
 define("DATABASE",              "biotrop");  #nama database
 
-define("BASE_URL",              "http://".$_SERVER['HTTP_HOST']."/biotrop/");
-define("PATH_URL",              $_SERVER['DOCUMENT_ROOT']."/biotrop/");
+define("BASE_URL",              "http://".$_SERVER['HTTP_HOST']."/databasesearch/");
+define("PATH_URL",              $_SERVER['DOCUMENT_ROOT']."/databasesearch/");
 
 define("FILE",                  BASE_URL."assets/file/");
 define("FILE_PATH",             PATH_URL."assets/file/");    

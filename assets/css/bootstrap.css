@@ -207,7 +207,7 @@ textarea {
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   color: #555555;
   background-color: #ffffff;
@@ -1673,7 +1673,7 @@ table {
 .table th,
 .table td {
   padding: 8px;
-  line-height: 20px;
+  line-height: 10px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
