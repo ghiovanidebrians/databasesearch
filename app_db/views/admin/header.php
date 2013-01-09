@@ -42,7 +42,17 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="<?php echo ($this->uri->segment(2) == 'index' OR $this->uri->segment(2) == NULL)?'active':'';?>">
-		<a href="<?php echo base_url();?>"><i class="icon-align-justify icon-white"></i> Kategori Database</a>
+		<a href="<?php echo base_url().'index.php/admin/index';?>"><i class="icon-align-justify icon-white"></i> Kategori Database</a>
+	      </li>
+	      <li class="<?php echo ($this->uri->segment(2) == 'konfigallery')?'active':'';?>">
+		<a href="<?php echo base_url().'index.php/admin/konfigallery';?>"><i class="icon-align-justify icon-white"></i> Konfigurasi Gallery</a>
+	      </li>
+	      <li class="<?php echo ($this->uri->segment(2) == 'konfig')?'active':'';?>">
+		<a href="<?php echo base_url().'index.php/admin/konfig';?>"><i class="icon-align-justify icon-white"></i> Konfigurasi Data Item</a>
+	      </li>
+	      <li class="<?php echo ($this->uri->segment(2) == 'konfigupload')?'active':'';?>">
+		<a href="<?php echo base_url().'index.php/admin/konfigupload';?>"><i class="icon-align-justify icon-white"></i>
+		Konfigurasi Data Upload</a>
 	      </li>
             </ul>
           </div><!--/.nav-collapse -->

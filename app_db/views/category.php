@@ -1,7 +1,7 @@
     <div class="container">
       <legend>Database <?php echo ucfirst($category);?></legend>
       <label id="button-search" style="text-align:right;float:right;padding: 15px;">
-        <span class="label label-success"><i class="icon-minus icon-white"></i> Search</span>
+        <span class="label"><i class="icon-minus icon-white"></i> Search</span>
       </label>
       <div id="search" style="display : 'inline-block'">
       <form action = "<?php echo base_url();?>index.php/welcome/search/<?php echo $category;?>" method="get" >
@@ -13,7 +13,10 @@
           </fieldset>
       </form>
       </div>
-      <?php if($category == NULL){?>
+      <?php
+          $number = 1;  
+          if($category == NULL){
+      ?>
       <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <h4>Warning!</h4>
@@ -36,7 +39,7 @@
               <tbody>
                 <?php foreach($species['result']->result() as $row){ ?>
                 <tr>
-                  <td>#</td>  
+                  <td><?php echo $number; ?></td>  
                   <td><?php echo $row->species;?></td>
                   <td><?php echo $row->author;?></td>
                   <td><?php echo $row->source;?></td>
@@ -48,7 +51,10 @@
                   </td>           
                   <td><?php echo $row->collector;?></td>
                   <td><?php echo $row->habitat;?></td>
-                 <?php } ?>
+                 <?php
+                      $number++;
+                      }
+                 ?>
                 </tr>
               </tbody>
         </table>

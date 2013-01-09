@@ -27,7 +27,9 @@ class Welcome_model extends CI_Model {
             $this->pagination->initialize($config); 
             $page                   = ($this->uri->segment(3)) ? $this->uri->segment(4) : 0;
             $data["result"]         = $this->fetch_record($config["per_page"], $page, 'biotrop__dataCollection',NULL,$category);
-        }else{                                                                       
+        }else{
+            
+            $config["keycode"]      = "?keycode=".$key;
             $config["base_url"]     = base_url()."index.php/welcome/search/".$category;
             $config["total_rows"]   = $this->record_count('biotrop__dataCollection', $key,$category);
             $this->pagination->initialize($config); 

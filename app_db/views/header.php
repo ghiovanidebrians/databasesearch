@@ -40,10 +40,12 @@
           </a>
           <a class="brand" href="<?php echo base_url();?>"><?php echo TITLE_SITE; ?></a>
           <div class="nav-collapse">
+	    <?php $menu = $this->uri->segment(3); ?>
             <ul class="nav">
-              <li class="<?php echo ($this->uri->segment(2) == 'index' OR $this->uri->segment(2) == NULL)?'active':'';?>"><a href="<?php echo base_url();?>"><i class="icon-home icon-white"></i> Home</a></li>
+              <li class="<?php echo ($this->uri->segment(2) == 'index' OR $this->uri->segment(2) == NULL OR $menu == 'all')?'active':'';?>">
+		<a href="<?php echo base_url();?>"><i class="icon-home icon-white"></i> Home</a>
+	      </li>
               <?php
-                  $menu = $this->uri->segment(3);
                   $data = menu();
                   for($i=0; $i<count($data); $i++)
                   { 
