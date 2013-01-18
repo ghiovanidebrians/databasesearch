@@ -34,23 +34,39 @@
                   <th>Image</th>
                   <th>Collector</th>
                   <th>Habitat</th>
+                  <th>Kategori</th>
                 </tr>
               </thead>
               <tbody>
                 <?php foreach($species['result']->result() as $row){ ?>
                 <tr>
                   <td><?php echo $number; ?></td>  
-                  <td><?php echo $row->species;?></td>
-                  <td><?php echo $row->author;?></td>
-                  <td><?php echo $row->source;?></td>
-                  <td><?php echo $row->description;?></td>
+                  <td>
+                  <?php echo isset($key)?highlight_phrase($row->species,$key, '<span style="color:#00FF00">', '</span>'):$row->species;?>
+                  </td>
+                  <td>
+                  <?php echo isset($key)?highlight_phrase($row->author,$key, '<span style="color:#00FF00">', '</span>'):$row->author;?>
+                  </td>
+                  <td>
+                  <?php echo isset($key)?highlight_phrase($row->source,$key, '<span style="color:#00FF00">', '</span>'):$row->source;?>
+                  </td>
+                  <td>
+                  <?php echo isset($key)?highlight_phrase($row->description,$key, '<span style="color:#00FF00">', '</span>'):$row->description;?>
+                  </td>
                   <td>
                       <a href="<?php echo base_url(); ?>index.php/welcome/images/<?php echo $category."/".$row->image;?>">
                       <i class="icon-search"></i> <?php echo $row->image;?>
                       </a>
                   </td>           
-                  <td><?php echo $row->collector;?></td>
-                  <td><?php echo $row->habitat;?></td>
+                  <td>
+                  <?php echo isset($key)?highlight_phrase($row->collector,$key, '<span style="color:#00FF00">', '</span>'):$row->collector;?>
+                  </td>
+                  <td>
+                  <?php echo isset($key)?highlight_phrase($row->habitat,$key, '<span style="color:#00FF00">', '</span>'):$row->habitat;?>
+                  </td>
+                  <td>
+                    <?php echo $row->category;?>
+                  </td>
                  <?php
                       $number++;
                       }

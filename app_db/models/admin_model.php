@@ -12,7 +12,6 @@ class Admin_model extends CI_Model {
    }
    public function get_gellery()
    {
-        
         $this->db->from('biotrop__gallery_all');
         return $this->db->get();
    }
@@ -59,7 +58,7 @@ class Admin_model extends CI_Model {
         //cek list data, if exist no delete action
         $this->db->select('*');
         $this->db->from('biotrop__gallery_all');
-        $this->db->join('biotrop__gallery', 'biotrop__gallery.galley = biotrop__gallery_all.gallery');
+        $this->db->join('biotrop__foto', 'biotrop__foto.galley = biotrop__gallery_all.gallery');
         $this->db->where('biotrop__gallery_all.id_gellery', $id);
         $query = $this->db->get();
         
@@ -70,5 +69,16 @@ class Admin_model extends CI_Model {
             //error 1 = category tersebut masih memiliki data
             redirect('/admin/konfigallery/?error=gallery1', 'refresh');
         }
+   }
+   public function insert_item_data($data)
+   {
+        $this->db->insert('biotrop__dataCollection', $data); 
+    
+   }
+   public function set_gallery($name)
+   {
+        $data   = array('gallery'=>$name);
+        $this->db->insert('biotrop__gallery_all', $data);
+        return $name;
    }
  }

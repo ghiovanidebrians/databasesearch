@@ -25,6 +25,7 @@ class Welcome extends CI_Controller
     public function category($cat=NULL)
     {
         $this->load->model('welcome_model');
+        $this->load->helper('text');
         
         $data['key']         = isset($_GET['search'])?$keysearch=$_GET['search']:"";
         $data['category']    = $cat;
@@ -45,12 +46,12 @@ class Welcome extends CI_Controller
     
     public function search($category=NULL)
     {
-        $keysearch         = $_GET['keycode'];
-        $data['key']       = $keysearch;
+        $data['key']       = $keysearch         = $_GET['keycode']; #get key
         $data['category']  = $category;
         
         $this->load->model('welcome_model');
-        $data['species']   = $this->welcome_model->get_data_all($keysearch,$category);
+        $this->load->helper('text');
+        $data['species']   = $this->welcome_model->get_data_all_search($keysearch,$category);
         $this->load->view('header');
         $this->load->view('category', $data);
         $this->load->view('footer');
